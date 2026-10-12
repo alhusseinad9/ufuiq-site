@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أُفُق للحلول التقنية والبرمجية</title>
+<!-- مؤقت: يمنع محركات البحث من الفهرسة حتى موافقة المؤسس. احذفه عند الإطلاق. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="أُفُق للحلول التقنية والبرمجية: تطوير تطبيقات وأنظمة برمجية للأعمال.">
+<meta name="theme-color" content="#0B1F4B">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: navy hero band with the vertical logo, then white sections on one narrow column, navy footer. Flat colors only. */
+:root {
+  --navy: #0B1F4B;
+  --blue: #2F6BFF;
+  --sky: #8FB5FF;
+  --white: #FFFFFF;
+  --line: #D9E4FF;        /* sky at low strength on white, for dividers */
+  --muted: #4A5878;       /* navy-tinted grey for secondary text */
+  --font: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+  --wrap: 68rem;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { line-height: 1.35; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: 1.25rem; }
+.latin { font-family: var(--font); letter-spacing: 0.18em; }
+
+/* Top bar */
+.top { background: var(--navy); color: var(--white); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
+.top .mini { display: block; line-height: 0; }
+.top .mini img { border-radius: 8px; }
+.top nav { display: flex; gap: 1.5rem; font-size: 0.9375rem; }
+.top nav a { text-decoration: none; color: var(--sky); }
+.top nav a:hover { color: var(--white); }
+
+/* Hero */
+.hero { background: var(--navy); color: var(--white); }
+.hero .wrap { display: grid; justify-items: center; text-align: center; gap: 1.5rem; padding-block: 3.5rem 4.5rem; }
+/* Reversed (white) vertical logo on the navy band. Clear space comes from the grid gap. */
+.logo { display: block; width: clamp(7.5rem, 30vw, 10rem); height: auto; margin-bottom: 1rem; }
+.tagline { font-size: clamp(1.375rem, 4.2vw, 2rem); font-weight: 600; }
+.horizon { width: 4rem; height: 2px; background: var(--blue); border: 0; margin: 0; }
+.intro { color: var(--sky); font-size: 1.125rem; }
+
+/* Sections */
+section { padding-block: 4.5rem; }
+section + section { border-top: 1px solid var(--line); }
+.head { display: grid; gap: 0.5rem; margin-bottom: 2.5rem; }
+.eyebrow { color: var(--blue); font-weight: 600; font-size: 0.9375rem; }
+.head h2 { font-size: clamp(1.625rem, 4vw, 2.125rem); font-weight: 700; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.service { display: grid; gap: 0.75rem; align-content: start; min-width: 0; }
+.service svg { width: 2.5rem; height: 2.5rem; color: var(--blue); }
+.service h3 { font-size: 1.25rem; font-weight: 700; }
+.service p { color: var(--muted); }
+
+/* Product */
+.product { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem;
+  border: 1.5px solid var(--navy); border-radius: 14px; padding: 2.25rem; }
+.product .name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem; }
+.product h3 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; }
+.product .name .latin { font-size: 1rem; font-weight: 600; color: var(--blue); letter-spacing: 0.12em; }
+.product .desc { margin-top: 0.5rem; font-size: 1.125rem; color: var(--muted); }
+.badge { display: inline-block; white-space: nowrap; background: var(--navy); color: var(--white);
+  font-size: 0.9375rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 999px; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 40rem; }
+.channel { display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 1.125rem 1.25rem; border-radius: 12px; background: var(--line); min-width: 0; }
+.channel .label { font-weight: 600; }
+.channel .soon { color: var(--muted); font-weight: 500; }
+
+/* Footer */
+footer { background: var(--navy); color: var(--white); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; padding-block: 2rem; font-size: 0.9375rem; }
+footer .latin { color: var(--sky); letter-spacing: 0.3em; }
+
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  .services { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .product { grid-template-columns: minmax(0, 1fr); padding: 1.5rem; }
+  .product .badge { justify-self: start; }
+  .contact { grid-template-columns: minmax(0, 1fr); }
+  section { padding-block: 3.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mini" href="#top"><img src="assets/icon-64.png" alt="أُفُق" width="36" height="36"></a>
+    <nav aria-label="أقسام الصفحة">
+      <a href="#services">الخدمات</a>
+      <a href="#product">منتجنا</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <img class="logo" src="assets/logo-vertical-white.png" alt="أُفُق UFUQ" width="440" height="909">
+      <h1 class="tagline">نصنع حلولًا تفتح آفاق المستقبل</h1>
+      <hr class="horizon">
+      <p class="intro">أُفُق للحلول التقنية والبرمجية: تطوير تطبيقات وأنظمة برمجية للأعمال.</p>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">الخدمات</span>
+        <h2>ماذا نقدّم</h2>
+      </div>
+      <div class="services">
+        <article class="service">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="11" y="4" width="18" height="32" rx="3"/><path d="M17 31h6"/></svg>
+          <h3>تطوير التطبيقات</h3>
+          <p>تطبيقات مصمَّمة حسب احتياج عملك.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 4h22v32l-4-3-4 3-3-3-3 3-4-3-4 3z"/><path d="M14 12h12M14 18h12M14 24h7"/></svg>
+          <h3>أنظمة إدارة المبيعات والفواتير</h3>
+          <p>أنظمة لتسجيل المبيعات وإصدار الفواتير ومتابعتها.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="7" width="32" height="26" rx="3"/><path d="M4 14h32M9 10.5h1M13 10.5h1"/></svg>
+          <h3>المواقع وتطبيقات الويب</h3>
+          <p>مواقع وتطبيقات ويب تعمل على الهاتف والكمبيوتر.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">منتجنا</span>
+        <h2>من أعمالنا</h2>
+      </div>
+      <div class="product">
+        <div>
+          <div class="name">
+            <h3>حصيلة</h3>
+            <span class="latin" dir="ltr" lang="en">Haseela</span>
+          </div>
+          <p class="desc">منظومة مبيعات وإدارة أعمال.</p>
+        </div>
+        <span class="badge">قيد التجربة</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">تواصل معنا</span>
+        <h2>قنوات التواصل</h2>
+      </div>
+      <!-- عند تجهيز القناة: استبدل «قريباً» بالبريد أو الرقم الحقيقي فقط. -->
+      <div class="contact">
+        <div class="channel"><span class="label">البريد الإلكتروني</span><span class="soon">قريباً</span></div>
+        <div class="channel"><span class="label">واتساب</span><span class="soon">قريباً</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>أُفُق للحلول التقنية والبرمجية · <span class="latin" dir="ltr" lang="en">UFUQ</span></span>
+    <span dir="ltr">© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
